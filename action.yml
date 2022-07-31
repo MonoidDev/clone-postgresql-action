@@ -1,0 +1,62 @@
+name: 'Clone PostgreSQL'
+description: 'Clone a PostgreSQL database'
+author: 'Monoid Dev'
+branding:
+  icon: 'database'
+  color: 'blue'
+inputs:
+  from-host:
+    description: 'Hostname of Source PostgreSQL'
+    required: true
+    default: 'localhost'
+  from-port:
+    description: 'Port of Source PostgreSQL'
+    required: true
+    default: '5432'
+  from-username:
+    description: 'Username of Source PostgreSQL'
+    required: true
+    default: 'username'
+  from-password:
+    description: 'Password of Source PostgreSQL'
+    required: true
+    default: 'password'
+  from-database:
+    description: 'Database Name of Source PostgreSQL'
+    required: true
+    default: 'db-name'
+  to-host:
+    description: 'Hostname of Remote PostgreSQL'
+    required: true
+    default: 'localhost'
+  to-port:
+    description: 'Port of Remote PostgreSQL'
+    required: true
+    default: '5432'
+  to-username:
+    description: 'Username of Remote PostgreSQL'
+    required: true
+    default: 'username'
+  to-password:
+    description: 'Password of Remote PostgreSQL'
+    required: true
+    default: 'password'
+  to-database:
+    description: 'Database Name of Remote PostgreSQL'
+    required: true
+    default: 'db-name'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.from-host }}
+    - ${{ inputs.from-port }}
+    - ${{ inputs.from-username }}
+    - ${{ inputs.from-password }}
+    - ${{ inputs.from-database }}
+    - ${{ inputs.to-host }}
+    - ${{ inputs.to-port }}
+    - ${{ inputs.to-username }}
+    - ${{ inputs.to-password }}
+    - ${{ inputs.to-database }}
+
