@@ -1,4 +1,4 @@
-# PostgreSQL GitHub Action
+# Clone PostgreSQL Action
 
 This [GitHub Action](https://github.com/features/actions) will clone a PostgreSQL database from source to destination.
 
@@ -9,7 +9,7 @@ See [action.yml](action.yml)
 Basic:
 ```yaml
 steps:
-- uses: MonoidDev/clone-postgresql-action@v1
+- uses: MonoidDev/clone-postgresql-action@v0.0.2
   with:
     from-host: 'host'
     from-port: 'port'
